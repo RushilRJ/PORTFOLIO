@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rushil Portfolio</title>
+  <script defer src="script.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fdf4;
+      color: #1a3c1b;
+    }
+
+    header {
+      background: linear-gradient(to right, #43a047, #66bb6a);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .quote {
+      margin-top: 1rem;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #c8e6c9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e8f5e9;
+      padding: 1rem;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #c8e6c9;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1a3c1b;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #388e3c;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .highlight-box {
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .highlight-box:hover {
+      transform: scale(1.02);
+    }
+
+    
+
+    .experience:hover + .projects {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .projects {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(30px);
+      pointer-events: none;
+      transition: all 0.5s ease;
+    }
+
+    .project-card {
+      background-color: #ffffff;
+      border: 2px solid #c8e6c9;
+      border-radius: 10px;
+      padding: 1rem;
+      flex: 1 1 calc(45% - 2rem);
+      min-width: 250px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background-color: white;
+      border-left: 5px solid #66bb6a;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .interest-card {
+      flex: 1 1 calc(50% - 1rem);
+      background: #ffffff;
+      border-left: 4px solid #66bb6a;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    footer {
+      background-color: #1b5e20;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .project-card, .interest-card {
+        flex: 1 1 100%;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rushil Sharma</h1>
+    <p>Computer Science Student | State-Level Chess Player</p>
+    <p class="quote">"Every move counts — in chess and in code."</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <div class="highlight-box">
+      <h2>About Me</h2>
+      <p>I’m a passionate technologist blending code with strategy. Whether it’s through AI models or chess moves, I strive to solve problems smartly. I’ve built chatbots, led teams, and competed across the board.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="highlight-box">
+      <h2>Skills & Strengths</h2>
+      <div class="skills">
+        <div class="skill-card"><h3>Python Development</h3><p>Efficient scripting, automation, and backend logic.</p></div>
+        <div class="skill-card"><h3>Web Design</h3><p>Modern HTML/CSS/JS sites that are clean and interactive.</p></div>
+        <div class="skill-card"><h3>Chess Strategy</h3><p>State-level competitor with deep game intuition.</p></div>
+        <div class="skill-card"><h3>Team Leadership</h3><p>Led school chess and coding teams to success.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="experience-bg">
+    <div class="highlight-box experience">
+      <h2>Experience</h2>
+      <p>Hover here to see some of the key projects I’ve worked on!</p>
+    </div>
+
+    <div class="projects">
+      <div class="project-card"><h3>Women's Safety Chatbot</h3><p>Secured 2nd place in a tech competition for developing a safety-focused chatbot for women.</p></div>
+      <div class="project-card"><h3>Medical Hackathon</h3><p>Top 50 finalist at VIT Bhopal with an innovative health-monitoring system.</p></div>
+      <div class="project-card"><h3>India Space Lab Internship</h3><p>Worked on drones, CanSat/CubeSat systems, and astronomy tools during this prestigious internship.</p></div>
+      <div class="project-card"><h3>Chess Captain & Coach</h3><p>Led my school chess team to multiple victories. Mentored young players in strategy and discipline.</p></div>
+    </div>
+
+    <div class="interests">
+      <div class="interest-card"><h3>🧠 Competitive Programming</h3><p>I thrive on coding challenges and logical puzzles.</p></div>
+      <div class="interest-card"><h3>♟️ Chess Strategy</h3><p>Deep thinking and foresight on the board guide my work.</p></div>
+      <div class="interest-card"><h3>💻 AI + Innovation</h3><p>Fascinated by intelligent systems solving real-world problems.</p></div>
+      <div class="interest-card"><h3>🧑‍💼 Leadership</h3><p>Enjoy guiding ideas from concept to launch.</p></div>
+    </div>
+  </section>
+  <section id="js-projects">
+  <div class="highlight-box">
+    <h2>JavaScript Projects</h2>
+    <div class="skills">
+
+      <div class="skill-card">
+        <h3>🧮 Calculator</h3>
+        <input type="text" id="calcInput" placeholder="e.g. 3 + 2" />
+        <button onclick="calculate()">Calculate</button>
+        <p id="calcResult"></p>
+      </div>
+
+      <div class="skill-card">
+        <h3>🔍 Prime Number Checker</h3>
+        <input type="number" id="primeInput" placeholder="Enter number" />
+        <button onclick="checkPrime()">Check</button>
+        <p id="primeResult"></p>
+      </div>
+
+      <div class="skill-card">
+        <h3>➗ Even or Odd Checker</h3>
+        <input type="number" id="evenOddInput" placeholder="Enter number" />
+        <button onclick="checkEvenOdd()">Check</button>
+        <p id="evenOddResult"></p>
+      </div>
+
+      <div class="skill-card">
+        <h3>✖️ Multiplication Table</h3>
+        <input type="number" id="tableInput" placeholder="Enter number" />
+        <button onclick="printTable()">Print Table</button>
+        <ul id="tableOutput"></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <div class="highlight-box">
+      <h2>Contact</h2>
+      <p>Email: rusilsharma2019@gmail.com</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/rushil-sharma-3b31b5318" target="_blank">rushil-sharma-3b31b5318</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Rushil Sharma | Designed with ♟️ and 💻
+  </footer>
+</body>
+</html>
